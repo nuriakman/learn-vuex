@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     counter:0,
+    colorCode: "red",
   },
   mutations: {
     increaseCounter(state, payload) {
@@ -14,19 +15,24 @@ export default new Vuex.Store({
     },
     decreaseCounter(state, payload) {
       state.counter -= payload;
+    },
+    setColorCode(state, payload) {
+      state.colorCode = payload;
     }
   },
   actions: {
-    increaseCounter( {commit}) {
+    increaseCounter( {commit} ) {
       axios("https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new").then( response => {
         commit("increaseCounter", response.data);
       } );
     },
-    decreaseCounter( {commit}) {
+    decreaseCounter( {commit} ) {
       axios("https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new").then( response => {
         commit("decreaseCounter", response.data);
       } );
-
+    },
+    setColorCode( {commit}, payload ) {
+      commit("setColorCode", payload);
     }
   },
   getters: {
