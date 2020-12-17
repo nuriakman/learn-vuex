@@ -22,6 +22,6 @@ export default {
 
 <style scoped>
   div {
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
 </style>

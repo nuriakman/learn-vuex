@@ -11,5 +11,8 @@ name: "CounterSquared"
 </script>
 
 <style scoped>
-
+  div {
+    margin-bottom: 20px;
+    font-size:40px;
+  }
 </style>
